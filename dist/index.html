@@ -17,12 +17,12 @@
 		<div class="search-cont flex flex-col text-xl md:text-2xl gap-2 md:gap-3 bg-slate-700 border-slate-600 border-2 p-4 rounded-2xl">
 			<p class="text-xl md:text-2xl p-1">Enter a Pokemon Name:</p>
 			<input type="text" placeholder="e.g. Pikachu" id="input" class="rounded-md p-1 outline-none">
-			<button class="flex bg-slate-500 justify-center rounded-md p-1 hover:bg-red-400 text-xl md:text-2xl active:bg-red-500 active:text-slate-700">Search</button>
+			<button id="btn" class="flex bg-slate-500 justify-center rounded-md p-1 hover:bg-red-400 text-xl md:text-2xl active:bg-red-500 active:text-slate-700">Search</button>
 		</div>
 
-		<div class="output-cont flex flex-col text-xl md:text-2xl bg-slate-700 border-slate-600 border-2 p-4 rounded-2xl md:w-96 gap-1 md:gap-2">
+		<div class="output-cont flex flex-col text-xl md:text-2xl bg-slate-700 border-slate-600 border-2 p-4 rounded-2xl md:min-w-96 gap-1 md:gap-2">
 			<!-- add hidden to the lower div and remove flex -->
-			<div class="flex justify-center poke-item ">
+			<div class="flex justify-center">
 				<img id="poke-img" src="images/pokeball_slate_bg.jpg" alt="poke-img" class="h-32 w-32 rounded-full border-4 border-transparent hover:border-red-400">
 			</div>
 
@@ -30,12 +30,14 @@
 			<p id="poke-weight" class="poke-item p-2 hover:bg-red-400 text-center rounded-md hidden">Poke-Weight</p>
 			<p id="poke-height" class="poke-item p-2 hover:bg-red-400 text-center rounded-md hidden">Poke-Height</p>
 			<p id="poke-type" class="poke-item p-2 hover:bg-red-400 text-center rounded-md hidden">Poke-Type</p>
-			<p id="poke-abilities" class="poke-itemp-2 hover:bg-red-400 text-center rounded-md hidden">Poke-Abilities</p>
-			<p id="pokeName" class="poke-item p-2 hover:bg-red-400 text-center rounded-md hidden">Poke-Name</p>
+			<p id="poke-abilities" class="poke-item p-2 hover:bg-red-400 text-center rounded-md hidden">Poke-Abilities</p>
+			<!-- <p id="pokeName" class="poke-item p-2 hover:bg-red-400 text-center rounded-md hidden">Poke-Name</p> -->
 
 			<!-- LOADER | add hidden when needed -->
 			<p id="loader" class="text-3xl text-center rounded-md hidden">Prof. Oak is typing....</p>
 		</div>
 	</main>
+
+	<script src="script.js"></script>
 </body>
 </html>
