@@ -38,7 +38,7 @@ function weightConv(val){
 }
 
 btn.addEventListener("click",async () => {
-    pokeImg.src = "images/pokeball_slate_bg.jpg"
+    pokeImg.src = "images/pokeball.png"
     loader.classList.add("hidden")
     loader.innerHTML = "Prof. Oak is typing...."
     pokeItems.forEach(item => item.classList.add("hidden"))
