@@ -7,6 +7,9 @@
       "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
     --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
       "Courier New", monospace;
+    --color-red-100: oklch(93.6% 0.032 17.717);
+    --color-red-200: oklch(88.5% 0.062 18.334);
+    --color-red-300: oklch(80.8% 0.114 19.571);
     --color-red-400: oklch(70.4% 0.191 22.216);
     --color-red-500: oklch(63.7% 0.237 25.331);
     --color-slate-50: oklch(98.4% 0.003 247.858);
@@ -192,6 +195,9 @@
   .hidden {
     display: none;
   }
+  .table {
+    display: table;
+  }
   .h-1 {
     height: calc(var(--spacing) * 1);
   }
@@ -203,6 +209,15 @@
   }
   .w-32 {
     width: calc(var(--spacing) * 32);
+  }
+  .w-36 {
+    width: calc(var(--spacing) * 36);
+  }
+  .border-collapse {
+    border-collapse: collapse;
+  }
+  .resize {
+    resize: both;
   }
   .flex-col {
     flex-direction: column;
@@ -230,6 +245,10 @@
   }
   .rounded-md {
     border-radius: var(--radius-md);
+  }
+  .border {
+    border-style: var(--tw-border-style);
+    border-width: 1px;
   }
   .border-2 {
     border-style: var(--tw-border-style);
@@ -310,6 +329,9 @@
   .text-slate-900 {
     color: var(--color-slate-900);
   }
+  .underline {
+    text-decoration-line: underline;
+  }
   .placeholder-slate-400 {
     &::placeholder {
       color: var(--color-slate-400);
@@ -319,9 +341,97 @@
     --tw-shadow: 0 1px 3px 0 var(--tw-shadow-color, rgb(0 0 0 / 0.1)), 0 1px 2px -1px var(--tw-shadow-color, rgb(0 0 0 / 0.1));
     box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
   }
+  .outline {
+    outline-style: var(--tw-outline-style);
+    outline-width: 1px;
+  }
   .outline-none {
     --tw-outline-style: none;
     outline-style: none;
+  }
+  .select-none {
+    -webkit-user-select: none;
+    user-select: none;
+  }
+  .selection\:bg-red-200 {
+    & *::selection {
+      background-color: var(--color-red-200);
+    }
+    &::selection {
+      background-color: var(--color-red-200);
+    }
+  }
+  .selection\:bg-red-300 {
+    & *::selection {
+      background-color: var(--color-red-300);
+    }
+    &::selection {
+      background-color: var(--color-red-300);
+    }
+  }
+  .selection\:bg-red-500 {
+    & *::selection {
+      background-color: var(--color-red-500);
+    }
+    &::selection {
+      background-color: var(--color-red-500);
+    }
+  }
+  .selection\:bg-slate-200 {
+    & *::selection {
+      background-color: var(--color-slate-200);
+    }
+    &::selection {
+      background-color: var(--color-slate-200);
+    }
+  }
+  .selection\:bg-slate-400 {
+    & *::selection {
+      background-color: var(--color-slate-400);
+    }
+    &::selection {
+      background-color: var(--color-slate-400);
+    }
+  }
+  .selection\:text-red-100 {
+    & *::selection {
+      color: var(--color-red-100);
+    }
+    &::selection {
+      color: var(--color-red-100);
+    }
+  }
+  .selection\:text-red-400 {
+    & *::selection {
+      color: var(--color-red-400);
+    }
+    &::selection {
+      color: var(--color-red-400);
+    }
+  }
+  .selection\:text-slate-100 {
+    & *::selection {
+      color: var(--color-slate-100);
+    }
+    &::selection {
+      color: var(--color-slate-100);
+    }
+  }
+  .selection\:text-slate-400 {
+    & *::selection {
+      color: var(--color-slate-400);
+    }
+    &::selection {
+      color: var(--color-slate-400);
+    }
+  }
+  .selection\:text-white {
+    & *::selection {
+      color: var(--color-white);
+    }
+    &::selection {
+      color: var(--color-white);
+    }
   }
   .hover\:border-red-500 {
     &:hover {
@@ -364,6 +474,11 @@
   .md\:w-36 {
     @media (width >= 48rem) {
       width: calc(var(--spacing) * 36);
+    }
+  }
+  .md\:w-60 {
+    @media (width >= 48rem) {
+      width: calc(var(--spacing) * 60);
     }
   }
   .md\:min-w-96 {
@@ -466,6 +581,26 @@
       }
     }
   }
+  .dark\:selection\:bg-slate-400 {
+    @media (prefers-color-scheme: dark) {
+      & *::selection {
+        background-color: var(--color-slate-400);
+      }
+      &::selection {
+        background-color: var(--color-slate-400);
+      }
+    }
+  }
+  .dark\:selection\:text-red-400 {
+    @media (prefers-color-scheme: dark) {
+      & *::selection {
+        color: var(--color-red-400);
+      }
+      &::selection {
+        color: var(--color-red-400);
+      }
+    }
+  }
 }
 @property --tw-border-style {
   syntax: "*";
@@ -541,6 +676,11 @@
   inherits: false;
   initial-value: 0 0 #0000;
 }
+@property --tw-outline-style {
+  syntax: "*";
+  inherits: false;
+  initial-value: solid;
+}
 @layer properties {
   @supports ((-webkit-hyphens: none) and (not (margin-trim: inline))) or ((-moz-orient: inline) and (not (color:rgb(from red r g b)))) {
     *, ::before, ::after, ::backdrop {
@@ -560,6 +700,7 @@
       --tw-ring-offset-width: 0px;
       --tw-ring-offset-color: #fff;
       --tw-ring-offset-shadow: 0 0 #0000;
+      --tw-outline-style: solid;
     }
   }
 }

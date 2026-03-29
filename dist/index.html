@@ -8,12 +8,12 @@
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Audiowide&family=Silkscreen:wght@400;700&family=VT323&display=swap" rel="stylesheet">
 </head>
-<body class="font-[Silkscreen] bg-slate-50 dark:bg-slate-800 md:px-40 text-slate-900 dark:text-slate-100">
+<body class="font-[Silkscreen] bg-slate-50 dark:bg-slate-800 md:px-40 text-slate-900 dark:text-slate-100 selection:bg-slate-200  dark:selection:bg-slate-400 selection:text-red-400">
   	<header class="flex flex-col py-4 items-center gap-1">
 		<h1 class="text-3xl md:text-5xl font-bold">
 			Poke-Dex
 		</h1>
-		<div class="h-1 border-b-4 border-red-500 w-24 md:w-36"></div>
+		<div class="h-1 border-b-4 border-red-500 w-36 md:w-60"></div>
 	</header>
 
 	<main class="flex py-10 px-10 md:px-0 flex-col md:flex-row gap-12 md:gap-0 md:justify-evenly md:items-center">
@@ -21,13 +21,13 @@
 			<p class="text-xl md:text-2xl p-1">Enter a Pokemon Name:</p>
 			<input type="text" placeholder="e.g. Pikachu" id="input" class="rounded-md p-1 outline-none bg-slate-100 dark:bg-slate-600 text-slate-900 dark:text-slate-100 placeholder-slate-400 dark:placeholder-slate-300">
 			<button id="btn" class="text-slate-50 dark:text-slate-100 flex bg-red-500  justify-center rounded-md p-1 hover:bg-red-400 hover:text-white
- text-xl md:text-2xl active:bg-red-500 active:text-slate-50">Search</button>
+ text-xl md:text-2xl active:bg-red-500 active:text-slate-50 select-none">Search</button>
 		</div>
 
 		<div class="output-cont flex flex-col text-xl md:text-2xl bg-white border-slate-200 shadow-sm dark:bg-slate-700 dark:border-slate-600 border-2 p-4 md:p-6 rounded-2xl md:min-w-96 gap-1 md:gap-2">
 			<!-- add hidden to the lower div and remove flex -->
 			<div class="flex justify-center">
-				<img id="poke-img" src="images/pokeball.png" alt="poke-img" class="h-32 w-32 rounded-full border-4 border-transparent hover:border-red-500">
+				<img id="poke-img" src="images/pokeball.png" alt="poke-img" class="h-32 w-32 rounded-full border-4 border-transparent hover:border-red-500 select-none">
 			</div>
 
 			<p id="poke-name" class="poke-item p-2 hover:bg-red-500 text-center rounded-md hidden">Poke-Name</p>
